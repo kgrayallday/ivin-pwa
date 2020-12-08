@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 body{
-  background-color: rgb(255, 255, 255);
   height:100%;
+  margin:0;
+  padding:0;
 }
 
 .container{
-  background-color: #ffffff;
+  background-image: url('/ivin-pwa/img/dust_scratches.png');
+  margin:0;
+  padding:0;
   display:flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +33,7 @@ border-style: solid 1px grey;
 }
 
 input[type=text]{
+  font-family: 'Nunito', sans-serif;
   border-style: none;
   border-radius: .25em;
   background-color: #e2e2e2;
@@ -38,6 +44,7 @@ input[type=text]{
 }
 
 input[type=password]{
+  font-family: 'Nunito', sans-serif;
   border-style: none;
   border-radius: .25em;
   background-color: #e2e2e2;
@@ -47,6 +54,7 @@ input[type=password]{
 }
 
 input[type=submit]{
+  font-family: 'Nunito', sans-serif;
   border-style: none;
   background-color: rgb(85, 85, 85);
   height:2.2em;
