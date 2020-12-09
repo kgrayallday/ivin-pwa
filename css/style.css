@@ -25,6 +25,21 @@ border-style: solid 1px grey;
 
 }
 
+.error-msg{ 
+  display:none;
+  font-family: 'Nunito', sans-serif;
+  color: red;
+  text-transform: uppercase;
+  background-color: rgb(250, 175, 175, 60%);
+  height: 4em;
+  margin-bottom: 2em;
+  padding-top:.5em;
+  padding-bottom:.5em;
+  text-align: center;
+  font-size: x-small;
+  border-radius: 3em;
+}
+
 .theform{
   display: flex;
   flex-direction: column;
@@ -32,7 +47,19 @@ border-style: solid 1px grey;
   justify-content: center;
 }
 
-input[type=text]{
+input[type=text], input[type=password]{
+  font-family: 'Nunito', sans-serif;
+  font-size: larger;
+  border-style: none;
+  border-radius: 1.3em;
+  background-color: #e2e2e2;
+  color: #555555;
+  height:2.5em;
+  text-align: center;
+
+}
+
+/* input[type=password]{
   font-family: 'Nunito', sans-serif;
   border-style: none;
   border-radius: .25em;
@@ -40,26 +67,16 @@ input[type=text]{
   color: rgb(61, 61, 61);
   height:2em;
   text-align: center;
-
-}
-
-input[type=password]{
-  font-family: 'Nunito', sans-serif;
-  border-style: none;
-  border-radius: .25em;
-  background-color: #e2e2e2;
-  color: rgb(61, 61, 61);
-  height:2em;
-  text-align: center;
-}
+} */
 
 input[type=submit]{
   font-family: 'Nunito', sans-serif;
   border-style: none;
-  background-color: rgb(85, 85, 85);
-  height:2.2em;
+  font-size: larger;
+  background-color: #555555;
+  height:2.5em;
   width:100%;
-  border-radius: 1em;
+  border-radius: 1.3em;
   color: #ffffff;
 
 }
