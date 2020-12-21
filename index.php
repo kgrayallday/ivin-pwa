@@ -1,3 +1,14 @@
+<?php
+// set up php to submit login request to server 
+if (isset($_POST['submit'])){
+    $name = $_POST['username'];
+    // test example need to actually check u/p against users db
+    echo "You Entered Username $name..."
+    $password = $_POST['password'];
+}
+
+?>
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -26,7 +37,7 @@
             </div>
 
             <div class="login-div">
-                <form class="theform" action="login">
+                <form class="theform" action="<?php echo $_SERVER['PHP_SELF']; ?>">
                     <input type="text" class="loginputs" id="username" name="username" placeholder="username"><br>
                     <input type="password" class="loginputs" name="password" id="password" placeholder="password"><br>
                     <input type="submit" value="Login" class="submitbutton loginputs">
