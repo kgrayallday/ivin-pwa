@@ -31,6 +31,10 @@ border-radius: 2em;
 border-style: solid 1px grey;
 }
 
+.submitbutton:hover{
+  background-color: rgb(43, 43, 43);
+}
+
 .error-div{ 
   visibility: hidden;
   font-family: 'Nunito', sans-serif;
