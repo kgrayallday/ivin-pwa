@@ -1,10 +1,24 @@
 <?php
+require 'const.php'; // contains all constants in one file
 // set up php to submit login request to server 
 if (isset($_POST['submit'])){
-    $name = $_POST['username'];
+    $username = $_POST['username'];
     // test example need to actually check u/p against users db
-    echo "You Entered Username $name..."
+    echo "You Entered Username $username..."
     $password = $_POST['password'];
+    // check if username password match, if so them reroute to logged-in activity
+    $connection = new mysqli($const_ServerName, $const_UserName, $const_Password, $const_DbName);
+    $sql_query = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
+    $result = $connection->query($sql_query);
+    if(mysql_num_rows($result) > 0 )
+    { 
+        $_SESSION["logged_in"] = true; 
+        $_SESSION["name"] = $name; 
+    }
+    else
+    {
+        echo 'The username or password are incorrect!';
+    }
 }
 
 ?>
@@ -37,7 +51,7 @@ if (isset($_POST['submit'])){
             </div>
 
             <div class="login-div">
-                <form class="theform" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                <form class="theform" action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>">
                     <input type="text" class="loginputs" id="username" name="username" placeholder="username"><br>
                     <input type="password" class="loginputs" name="password" id="password" placeholder="password"><br>
                     <input type="submit" value="Login" class="submitbutton loginputs">
