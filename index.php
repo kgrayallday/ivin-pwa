@@ -4,7 +4,7 @@ require 'const.php'; // contains all constants in one file
 if (isset($_POST['submit'])){
     $username = $_POST['username'];
     // test example need to actually check u/p against users db
-    echo "You Entered Username $username..."
+    echo "You Entered Username $username...";
     $password = $_POST['password'];
     // check if username password match, if so them reroute to logged-in activity
     $connection = new mysqli($const_ServerName, $const_UserName, $const_Password, $const_DbName);
@@ -13,11 +13,12 @@ if (isset($_POST['submit'])){
     if(mysql_num_rows($result) > 0 )
     { 
         $_SESSION["logged_in"] = true; 
-        $_SESSION["name"] = $name; 
+        $_SESSION["username"] = $username; 
     }
     else
     {
         echo 'The username or password are incorrect!';
+        // and show the login screen
     }
 }
 
